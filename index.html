@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Tutorial</title>
+    <!-- Linking bootstrap 5 CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- Bootstrap CSS link needs to be included before linking any custom CSS! -->
+    <link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+<body>
+
+    <section class="text-justify"id="intro">
+
+        <div class="container mb-5">
+
+            <h1 class="mt-5"> Bootstrap Tutorial</h1>
+
+            <p>Before we can start, we need to include the relevant bootstrap files in our index.html file.</p>
+            <p>Depending on the version of Bootstrap you use, this will need to be adjusted accordingly. </p>
+            <p>I have used v4 here.</p>
+
+        </div>
+
+        <div class="container mt-5">
+
+            <h2> Getting Bootstrap linked in your project</h2>
+
+            <p class="mt-4">First, we need to link the CSS file for bootstrap 4. In this case, I will be using a CDN link instead of having bootstrap files downloaded to your local folder.</p>
+
+            <p><b>CSS:</b><pre>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> </pre> </p>
+
+            <p>It is important that you add the bootstrap CSS before any user stylesheet that you may have.</p>
+
+            <pre>Next, You need to add the following javascript before the closing &lt;/body&gt; tag. At the very end, as you can see in this pages index.html file</pre>
+            
+            <pre>
+
+                &lt;script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">&lt/script&gt;
+                &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">&lt;/script&gt;
+                
+            </pre>
+
+            <p>Now we are ready to use bootstrap. You can add the classes to existing divs right way, but for the purpose of this demo, we need to first understand the grid system.</p>
+
+            <p>Bootstraps grid system is built inside a div with the class name "container", and this container class div is necessary to use the grid system in bootstrap</p>
+
+            <p>Create a new div with the class container. I'll give all divs a  background-color so we can see how it works I placed some dummy p tags in there so you can see it.</p>
+
+        </div>
+
+        <div class="container mt-5" style="background-color:grey">
+
+            
+            <p>Test 1</p>
+            <p>Test 1</p>
+            <p>Test 1</p>
+         
+        </div>
+
+        <div class="container mb-5">
+        <p>You may be tempted to start placing your content inside this new div, while you can do it, if you want to take advantage of the grid system, then we need to follow a specific structure.</p>
+
+        <p>Each containers can hold upto 12 columns. But inorder to create a horizontal group of columns, we need to create a div of class "row" inside the container. </p>
+        </div>
+
+        <div class="container mb-5" style="background-color:grey">
+
+            
+            <div class="row">
+
+                <p> Yay!</p>
+                <p> Yay!</p>
+                <p> Yay!</p>
+
+            </div>
+
+        </div>
+
+            <div class="container mb-5"> 
+                <p> Although it looks like we got a row, this won't work and we won't be able to use the bootstrap classes to position it properly. Inspect the code and you can see that i placed the P tags directly inside the row div.</p>
+                <p> In order to use the grid system properly, the content needs to be in its own div with a "col" class. A row div cannot have any other direct children (other than col divs). I'll fix this here (inspect code)</p>
+            </div>
+
+                
+
+            <div class="container mb-5" style="background-color:grey">
+
+            
+                <div class="row">
+
+                    <div class="col">
+                        <p> Yay!</p>
+                    </div>
+
+                    <div class="col">
+                        <p> Yay!</p>
+                    </div>
+
+                    <div class="col">
+                        <p> Yay!</p>
+                    </div>
+                
+    
+                </div>
+    
+            </div>
+
+            <div class="container mb-5">
+                <p>I have my 3 "p" tags now placed in a row each within it's own column. I'll just give each of them a background color so it is more obvious. And also, have a look at the grouping. It always start with a container > row div > and as many columns inside the row div as you need for the content.</p>
+                <img src="./images/bs-grid.PNG" class="img-fluid">
+               </div>
+         
+
+            <div class="container" style="background-color:grey">
+
+            
+                <div class="row">
+
+                    <div class="col" style="background-color: blue;">
+                        <p> Yay!</p>
+                    </div>
+
+                    <div class="col" style="background-color: rgb(255, 0, 162);">
+                        <p> Yay!</p>
+                    </div>
+
+                    <div class="col" style="background-color: rgb(0, 242, 255);">
+                        <p> Yay!</p>
+                    </div>
+                
+    
+                </div>
+
+    
+            </div>
+
+            <div class="container mt-5">
+
+                <p>We can see that each of the three elements we added takes up the same space in the column.</p>
+                <p>Bootstrap supports a maximum of 12 colums in every container. Bootstrap uses specific classes to control how much spacing each column uses.</p>
+                <p>And because we just only used "col", it means that every single element will get an equare share of the 12 columns available. Since I had 3 columns inside this row, they will each get 12/3 = 4 column spacing each </p>
+            </div>
+
+            <div class="container">
+
+                
+                <div class="row">
+
+                    <div class="col" style="background-color: blue;">
+                        <p> Yay!</p>
+                    </div>
+
+                    <div class="col" style="background-color: rgb(255, 0, 162);">
+                        <p> Yay!</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container">
+
+                <p> With just 2 elements, they each get 6 each (12/2)</p>
+
+               <p>And if I add more elements in that same row, they will continue to share the 12 grids equally between them </p> 
+               <p> As seen here:</p>
+
+            </div>
+
+
+            <div class="container" style="background-color:grey">
+
+            
+                <div class="row">
+
+                    <div class="col" style="background-color: blue;">
+                        <p> Yay!</p>
+                    </div>
+
+                    <div class="col" style="background-color: rgb(255, 0, 162);">
+                        <p> Yay!</p>
+                    </div>
+
+                    <div class="col" style="background-color: rgb(0, 242, 255);">
+                        <p> Yay!</p>
+                    </div>
+                    <div class="col" style="background-color: rgb(48, 86, 88);">
+                        <p> Yay!</p>
+                    </div>
+                
+    
+                </div>
+
+    
+            </div>
+
+            <div class="container mt-2">
+                
+                
+                <p>In the example below, I have assigned the "col-9" class to the column element on the right. But since only 12 column spaces can be taken, the one of the left with the col tag didn't move. as it is already taking up the last 3 columns</p>
+
+                <p> We can mix and match these numbers to give more space to where it is needed.</p>
+
+                
+
+            </div>
+
+            <div class="container mt-5">
+
+                
+                <div class="row">
+
+                    <div class="col" style="background-color: blue;">
+                        <p> Yay!</p>
+                    </div>
+
+                    <div class="col-9" style="background-color: rgb(255, 0, 162);">
+                        <p> Yay!</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container mt-3">
+
+                <p>
+                    As an example, if I wanted 3 rows in the first row, all of the same width
+                    and just one in the second row (which we haven't added yet). It's a fairly easy task.
+                </p>
+            </div>
+
+            <div class="container mt-5">
+
+                <!-- First Row -->
+                <div class="row">
+
+                    <div class="col-4" style="background-color: blue;">
+                        <p> Yay!</p>
+                    </div>
+
+                    <div class="col-4" style="background-color: rgb(255, 0, 162);">
+                        <p> Yay!</p>
+                    </div>
+
+                    <div class="col-4" style="background-color: rgb(39, 47, 155);">
+                        <p> Yay!</p>
+                    </div>
+
+                </div>
+
+                <!-- Second Row -->
+
+                <div class="row">
+
+                    <div class="col-4" style="background-color: rgb(114, 114, 164);">
+                        <p> Second Row!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container mt-5">
+                <p>If you inspect the code, you will see that I have two rows placed in the same container. You can have as many additional rows to fit your content for your section</p>
+                
+                 <img src="./images/bs-grid2.PNG" class="img-fluid">
+
+                 <p class="mt-3"> As for the column inside my second row, I have specifically given it a "col-4" class, which means, the rest of the 8 spaces will remain unused, unless we change something else</p>
+            </div>
+
+            <div class="container mt-5">
+                <p>I can now do this for example:</p>
+
+            </div>
+
+            <div class="container mt-5">
+
+                <!-- First Row -->
+                <div class="row">
+
+                    <div class="col-4" style="background-color: blue;">
+                        <p> Yay!</p>
+                    </div>
+
+                    <div class="col-4" style="background-color: rgb(255, 0, 162);">
+                        <p> Yay!</p>
+                    </div>
+
+                    <div class="col-4" style="background-color: rgb(39, 47, 155);">
+                        <p> Yay!</p>
+                    </div>
+
+                </div>
+
+                <!-- Second Row -->
+
+                <div class="row">
+
+                    <div class="col-6 m-auto" style="background-color: rgb(114, 114, 164);">
+                        <p> Second Row! col-6 class with m-auto class (margin-auto). This will make it centered.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container mt-5 text-center">
+
+                <img src="./images/bs-grid3.PNG">
+
+            </div>
+
+            <div class="container mt-3">
+
+                <p>Changing the class from col-4 to col-6 increased the space occupied by 2, but it sticks to the design of having a maximum of 12 colums of space to share betwen the elements in the same row. It's upto us to decide how much of colum space out of the 12 that it takes. But as you can see, it grew in height, as we added more text. Which is great! because we can now add our content, and adjust the layout with precison for every single column</p>
+
+            </div>
+
+            <div class="container mt-5">
+
+                <!-- First Row -->
+                <div class="row">
+
+                    <div class="col-3" style="background-color: blue;">
+                        <p> col-3</p>
+                    </div>
+
+                    <div class="col-6" style="background-color: rgb(255, 0, 162);">
+                        <p> col-6</p>
+                    </div>
+
+                    <div class="col-3" style="background-color: rgb(39, 47, 155);">
+                        <p> col-3</p>
+                    </div>
+
+                </div>
+
+                <!-- Second Row -->
+
+                <div class="row">
+
+                    <div class="col-12" style="background-color: rgb(114, 114, 164);">
+                        <p> Second Row! col-12 (same as col) class</p>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            
+
+
+         
+        
+
+
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    
+</body>
+</html>
